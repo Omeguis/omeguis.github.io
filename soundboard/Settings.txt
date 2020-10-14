@@ -1,0 +1,38 @@
+//put your sounds in the sounds directory
+
+//create the commands like you would normally at http://branebot.com/Commands/Current, the command restrictions apply
+//for instance, you can make a sub only command using the restrictions in the command settings
+//if a user is not a sub, that command does not get passed through the API
+
+//add a line for each command you want to trigger a sound
+//the format is
+//  command,sound file name, amount of currency the command costs, minimum bits
+// minimum bits 0 means bits don't matter
+// if using bits, put higher ones first, soundboard will play first one that matches criteria
+// you can leave the first paramter empty if you don't want a command
+
+//Remove the lines below or put // in front of them to comment them out when you use this addon
+
+!genkidama,genkidama.mp3,3,0
+!no,nopleaseno.mp3,3,0
+!headshot,headshot.mp3,3,0
+!ohyeah,ohyeah.mp3,3,0
+!playstation,playstation.mp3,3,0
+!first,firstblood.mp3,3,0
+!callese,callese.mp3,3,0
+!cheer,cheer.mp3,3,0
+
+//example 1, !door command makes a door sound, costs nothing, bits don't matter
+//!door,door.wav,0,0
+
+//example 2, !cat command makes a door sound, costs 100 currency, bits don't matter
+// if I made !cat a sub only command, only subs could use this and meow
+//!cat,meow.mp3,100,0
+
+//example 3, !dog command OR cheering more than 10 bits will make a yay sound, no currency cost
+//!dog,yay.mp3,0,10
+
+//example 4, there's nothing before the first comma, so command doesn't matter
+//if a user cheers 1 or more bits a door sound will play, no currency cost
+//,door.wav,0,1
+

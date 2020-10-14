@@ -1,0 +1,70 @@
+﻿<!-- ******************* -->
+<!-- Beardy's Soundboard -->
+<!-- ******************* -->
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        
+    </style>
+</head>
+
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js" ></script>
+<script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js"></script>
+<script src="http://branebot.com/scripts/api.js"></script>
+<script src="processing.js"></script>
+<script>
+    
+    var token = '';
+    $(function () {
+        
+        $.get("token.txt", function (data) { })
+    .done(function (data) {
+        token = data;
+    }).fail(function () {
+        alert('Failed opening token');
+    });
+        /**********************/
+        //No need to change anything below
+        streamerhub = $.connection.streamerHub;
+        $.connection.hub.logging = true;
+	    $.connection.hub.url='http://branebot.com/signalr';
+
+        $.connection.hub.start().done(function () {
+            streamerhub.server.connect(token).done(function (data)
+            {
+		        if (!data.Success){
+		            console.log(data.ErrorMessage);
+		        }
+            });
+        });
+
+        $.connection.hub.disconnected(function () {
+            setTimeout(function() {
+                $.connection.hub.start().done(function () {
+                    streamerhub.server.connect(token).done(function (data) {
+                        if (!data.Success) {
+                            console.log(data.ErrorMessage);
+                        }
+                    });
+                });
+            }, 30000);
+        });
+        /*************************/
+
+        //All communication from server comes here
+        streamerhub.client.receive =function (data)
+        {
+            console.log(JSON.stringify(data));
+	        ProcessCommand(data);		    
+        }
+    });
+
+    
+</script>

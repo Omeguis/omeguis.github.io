@@ -1,0 +1,12 @@
+This soundboard add-on requires access to the "professional api", which requires a minimum subscription at the Advanced level.
+
+It takes just a couple of steps to set it up.
+Unzip the files anywhere on your machine, but make sure you don't rename any files or directories once unzipped
+Then go to http://branebot.com/Account/Settings  and then to the Integration tab.  Copy the Integration Token.
+Open the token.txt file and paste the token in there.
+
+Now open the settings.txt file and follow the instructions to see where to place your sound files and setup the commands.
+
+Once you're setup, just point your browser source to soundboard.html.  
+
+Tutorial can be found here, https://www.youtube.com/watch?v=cTqCxfkX0v0
