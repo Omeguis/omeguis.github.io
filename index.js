@@ -27,7 +27,6 @@ let totalWins = [];
 let overallWinRatio;
 let totalKillsMatches; 
 const matchesWrapper = document.getElementById("matchList");
-let contenedorOvKD = document.getElementById("overall-kd");
 let hasLocalStorage = false;
 const noMatchesWrapper = document.getElementById("noMatchesDisclaimer");
 
@@ -103,7 +102,6 @@ let currentMatchTimestamp = new Date().format("dd/m/yy, HH:MM");
 
       KDCollection = Partidas.map((el) => el.matchKD);
       overallKD = calculateOverall(KDCollection);
-      contenedorOvKD.innerText = calculateOverall(KDCollection);
       //Save to LocalStorage for Visor
       localStorage.setItem("overallKD", overallKD);
       
@@ -155,7 +153,6 @@ function deleteLastMatch(arr){
   } else {
     overallKD = 0;
   }
-  contenedorOvKD.innerText = calculateOverall(KDCollection);
   //Save to LocalStorage for Visor
   localStorage.setItem("overallKD", overallKD);
   
