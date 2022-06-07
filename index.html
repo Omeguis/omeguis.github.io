@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CoD Session Tracker for Stream</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        
+        <script src="lib/dateFormat.js"></script>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <header>COD KD SESSION TRACKER</header>
+            <main>
+                <div class="reset-wrapper">
+                    <button type="submit" id="" onclick="deleteAllMatches()">NUEVA SESIÓN</button>
+                </div>
+                <div class="main-w-sidebar">
+                    <div>
+                        <div>
+                            <!--div>FILTROS</div> @todo
+                            <div>
+                                <select name="" id="">
+                                    <option value="all" default>Todas</option>
+                                    <option value="">Más de 5 Kills</option>
+                                    <option value="">Más de 10 Kills</option>
+                                </select>
+                            </div-->
+                            <div class="only-top-wrapper">
+                                <div class="pretty p-default">
+                                    <input type="checkbox" id="onlytop5" name="onlytop5" />
+                                    <div class="state p-warning">
+                                        <label for="onlytop5">Mostrar sólo TOP 5</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="empty-state" id="noMatchesDisclaimer">Aún no cargaste partidas en la sesión.</div>
+                            <div class="latest-matches" id="latest-matches">
+                                
+                            </div>
+                            <div><button type="submit" id="deleteMatchBtn">ELIMINAR ULTIMA PARTIDA CARGADA</button></div>
+                            <!--div><button type="submit" id="redrawMatchesBtn">REDIBUJAR TODAS</button></div-->
+                            
+                        </div>
+                    </div>
+                    <div class="load-match">
+                        <div class="intro">Carga de partida:</div>
+                        <div class="load-new-match">
+                            <div class="load-inputs">
+                                <div>
+                                    <select name="" id="inputMatchType"  style="margin-bottom: 10px;">
+                                        <option value="BR Solos">SOLOS</option>
+                                        <option value="BR Duos">DUOS</option>
+                                        <option value="BR Trios">TRIOS</option>
+                                        <option value="BR Squads">SQUADS</option>
+                                    </select>
+                                </div>
+                                <input type="number" id="inputMatchPosition" placeholder="Puesto" style="margin-bottom: 10px;">
+                                <div>
+                                    <input type="number" id ="inputMatchKills" placeholder="Kills Totales" style="margin-bottom: 10px;">
+                                    <div class="gulag-disclaimer"><?xml version="1.0"?><svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"/></svg> <span>Incluye tu GULAG</span></div>
+                                </div>
+                                <div>
+                                    <input type="number" id="inputMatchDeaths" placeholder="Muertes Totales" style="margin-bottom: 10px;">
+                                    <div class="gulag-disclaimer"><?xml version="1.0"?><svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"/></svg> <span>Incluye tu GULAG</span></div>
+                                </div>
+                            </div>
+                            <div class="emptyInputsError" id="emptyInputsError" style="display: none;">Por favor llená todos los campos.</div>
+                            <div><button type="submit" id="submitMatch">Cargar partida</button></div>
+                        </div>
+                        <div class="chroma-opener-wrapper">
+                            <button type="submit" id="openChroma" onclick="openChroma()">ABRIR OVERLAY</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="matchList">
+            <div></div>
+        </div>
+        <script src="index.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    </body>
+</html>
