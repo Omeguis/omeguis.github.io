@@ -1,0 +1,161 @@
+/* PLACEHOLDER CSS, WILL SCSS LATER ON */
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #1c1e21;
+    color: white;
+}
+
+input, select {
+    width: -webkit-fill-available;
+}
+
+header{
+    height: 34px;
+    padding: 20px 8px;
+    position: fixed;
+    background-color: #2b2f33;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    color: white;
+    box-shadow: 0 6px 6px 0 rgb(0 0 0 / 16%);;
+}
+.position{
+    font-family: 'Anton', sans-serif;
+}
+.main-wrapper {
+    margin-top: 80px;
+}
+.main-w-sidebar {
+    display: grid;
+    grid-gap: 1.5rem;
+    align-items: flex-start;
+    grid-template-columns: minmax(0,1fr) 400px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.latest-matches .position{
+    font-size:3.5em;
+}
+.latest-matches .position sup{
+    font-size: 20px;
+}
+
+.only-top-wrapper{
+    margin-bottom: 12px;
+}
+.only-top-wrapper label, .only-top-wrapper input {
+    cursor: pointer;
+}
+.load-new-match input{
+    padding: 8px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid grey;
+}
+  
+.latest-matches .match {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+}
+.match div {
+    align-self: center;
+}
+
+.latest-matches .match:nth-child(odd) {
+    background-color: #333;
+    color: #fff;
+}
+.latest-matches .match:nth-child(even) {
+    background-color: rgb(26, 26, 26);
+    color: #fff;
+}
+
+.emptyInputsError{
+    padding: 8px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border: 1px solid; 
+    margin-bottom: 12px;
+}
+
+
+button {
+    padding: 8px 12px;
+    background-color: #ffb01d;
+    color:rgb(26, 26, 26);
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: #ffcc6e;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.load-match .intro{
+    margin-bottom: 12px;
+}
+.load-match select {
+    padding: 8px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid grey;
+}
+.gulag-disclaimer {
+    font-size: 12px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color:  grey;
+    color: white;
+    border: 1px solid grey;
+    margin-bottom: 8px;
+    margin-top: -6px;
+}
+.gulag-disclaimer svg {
+    fill: white;
+    width: 20px;
+}
+.gulag-disclaimer span {
+    position: relative;
+    top: -7px;
+    left: 3px;
+}
+.load-inputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 12px;
+}
+#submitMatch{
+    width: 100%;
+}
+.show-me{
+    display: block;
+}
+.empty-state {
+    text-align: center;
+    margin: 20px 0 20px;
+    display: none;
+}
+.empty-state.show-me{
+    display:block;
+}
+.chroma-opener-wrapper{
+ margin-top: 10px;
+}
+.chroma-opener-wrapper button {
+    width: 100%;
+}
+.reset-wrapper{
+    text-align: center;
+}

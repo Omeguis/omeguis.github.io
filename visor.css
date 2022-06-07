@@ -1,0 +1,40 @@
+html{
+    font-family: 'Lato', sans-serif;
+}
+.border-top-bot{
+    height: 2px;
+    background-color: rgb(233, 180, 7);
+}
+.main-info{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    background-color: rgba(63, 63, 63, 0.4);
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.main-info span {
+    font-family: 'Teko', sans-serif;
+    font-weight: normal;
+    text-transform: none;
+}
+
+#totalKills, #globalKD, #winPercentage{
+    font-size: 40px;
+}
+.thenumber{
+    text-align: center;
+    background: rgba(240, 170, 20, 0.9);
+    box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
+-webkit-box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
+-moz-box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
+}
+.thetext{
+    margin-top: 4px;
+    text-align: right;
+    font-size: 14px;
+}
