@@ -17,6 +17,7 @@ setInterval(function() {
     let visorOverallKD = localStorage.getItem("overallKD");
     let kdwrapper = document.getElementById("globalKD");
     visorOverallKD !== null ? kdwrapper.innerHTML = visorOverallKD : kdwrapper.innerHTML = "N/A";
+    kdwrapper.innerHTML = kdwrapper.innerHTML.substring(0,5);
 
     let totalkillsLocal = localStorage.getItem("suma de kills");
     let killswrapper = document.getElementById("totalKills");

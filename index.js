@@ -183,7 +183,7 @@ function getWinPercentage(totalWinsAmt, amountPlayed){
   }
   amountPlayed = Partidas.length;
   totalWinsAmt = totalWins.length;
-  overallWinRatio = ((totalWinsAmt/amountPlayed)*100).toFixed(2);;
+  overallWinRatio = ((totalWinsAmt/amountPlayed)*100).toFixed(2);
   localStorage.setItem('win percentage', overallWinRatio);
   return overallWinRatio;
 }
