@@ -16,31 +16,46 @@
 </head>
 <body>
     <div class="visor_wrapper">
-        <div class="border-top-bot"></div>
+        <div class="border-top-bot" id="supBorder"></div>
         <div class="main-info">
             <div>
-                <div class="thenumber">
+                <div class="thenumber" id="first-cell">
                     <div><span id="totalKills">N/A</span></div>    
                 </div>
                 <div class="thetext"> Stream Kills</div>
             </div>
             <div>
-                <div class="thenumber">
+                <div class="thenumber" id="second-cell">
                     <div><span id="globalKD">N/A</span></div>
                 </div>
                 <div class="thetext"> Stream K/D</div>
             </div>
 
             <div>
-                <div class="thenumber">
+                <div class="thenumber" id="third-cell">
                     <div><span id="winPercentage">N/A</span></div>
                 </div>
                 <div class="thetext"> Stream WIN %</div>
             </div>
 
         </div>
-        <div class="border-top-bot"></div>
+        <div class="border-top-bot" id="bottomBorder"></div>
     </div>
+
+    <div style="margin-top: 50px;">
+    <div class="color-picker-wrapper">
+        <label for="colorpicker">Color Picker Border Arriba:</label>
+        <input type="color" id="colorpickerbtop" value="#0000ff">
+    </div>
+    <div class="color-picker-wrapper">
+        <label for="colorpicker">Color Picker Border Abajo:</label>
+        <input type="color" id="colorpickerbbottom" value="#0000ff">
+    </div>
+    <div class="color-picker-wrapper">
+        <label for="colorpicker">Color Picker Fondo Grilla:</label>
+        <input type="color" id="colorpickergrid" value="#0000ff">
+    </div>
+</div>
     
     <script src="visor.js"></script>
 </body>

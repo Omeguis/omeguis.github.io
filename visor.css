@@ -2,7 +2,7 @@ html{
     font-family: 'Lato', sans-serif;
 }
 .border-top-bot{
-    height: 2px;
+    height: 3px;
     background-color: rgb(233, 180, 7);
 }
 .main-info{
@@ -32,6 +32,7 @@ html{
     box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
 -webkit-box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
 -moz-box-shadow: -1px 2px 29px -10px rgba(163,21,21,0.96) inset;
+opacity: 0.9;
 }
 .thetext{
     margin-top: 4px;
